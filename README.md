@@ -32,40 +32,48 @@ cheet('up up down down left right left right b a', {
 
 [My personal site](http://namuol.github.io) uses cheet.js (Try the [Konami Code](http://en.wikipedia.org/wiki/Konami_Code))
 
+### Install
+
+#### bower
+
+    bower install cheet.js
+
+&nbsp;
+
+    <script src="bower_components/cheet.js/cheet.min.js" type="text/javascript"></script>
+
 ### API
 
-#### `cheet(sequence, done | {next,fail,done})`
+<a name='api_cheet'></a>
+#### [`cheet(sequence, done | {next,fail,done})`](#api_cheet)
 
-##### `sequence`
-A string representation of a sequence of [key names](#available-key-names).
-
-Each keyname must be separated by a single space.
-
-##### `done(str, seq)`
-
-A callback to execute each time the sequence is correctly pressed.
-
-Arguments:
-* `str` - The string representation of the sequence that completed.
-* `seq` - An array of [key names](#available-key-names) representing the sequence that completed.
-
-##### `fail(str, seq)`
-
-A callback to execute each time a sequence's progress is broken.
-
-Arguments:
-* `str` - The string representation of the sequence that completed.
-* `seq` - An array of [key names](#available-key-names) representing the sequence that was pressed.
-
-##### `next(str, key, num, seq)`
-
-A callback to execute each time a correct key in the sequence is pressed.
-
-Arguments:
-* `str` - The string representation of the sequence that completed.
-* `key` - The [name of the key](#available-key-names) that was just pressed.
-* `num` - A number representing the current progress of the sequence. (starts at 0)
-* `seq` - An array of [key names](#available-key-names) representing the sequence that is in progress.
+> `sequence` (String)
+> > A string representation of a sequence of [key names](#available-key-names).
+> > 
+> > Each keyname must be separated by a single space.
+> 
+> `done(str, seq)` (callback)
+> > A callback to execute each time the sequence is correctly pressed.
+> > 
+> > Arguments:
+> > * `str` - The string representation of the sequence that completed.
+> > * `seq` - An array of [key names](#available-key-names) representing the sequence that completed.
+> 
+> `fail(str, seq)` (callback)
+> > A callback to execute each time a sequence's progress is broken.
+> > 
+> > Arguments:
+> > * `str` - The string representation of the sequence that completed.
+> > * `seq` - An array of [key names](#available-key-names) representing the sequence that was pressed.
+> 
+> `next(str, key, num, seq)` (callback)
+> > A callback to execute each time a correct key in the sequence is pressed.
+> > 
+> > Arguments:
+> > * `str` - The string representation of the sequence that completed.
+> > * `key` - The [name of the key](#available-key-names) that was just pressed.
+> > * `num` - A number representing the current progress of the sequence. (starts at 0)
+> > * `seq` - An array of [key names](#available-key-names) representing the sequence that is in progress.
 
 ### Available Key Names
 
