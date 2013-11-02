@@ -1,0 +1,11 @@
+{
+  "name": "cheet.js",
+  "version": "0.1.0",
+  "main": "cheet.min.js",
+  "ignore": [
+    "README.md",
+    ".editorconfig",
+    "test.html",
+    "cheet.js",
+  ]
+}

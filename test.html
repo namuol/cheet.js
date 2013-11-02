@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html class="pre">
+  <head>
+    <meta charset="utf-8" />
+    <title>cheet tests</title>
+    <style>
+      .easteregg { display: none; }
+    </style>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="cheet.js"></script>
+    <script>
+      cheet('a b c d', function () {
+        $('.easteregg._0').toggle();
+      });
+
+      cheet('i d d q d', {
+        next: function (str, key, num, seq) {
+          console.log('key pressed: ' + key);
+          console.log('progress: ' + num);
+          console.log('seq: ' + seq);
+        },
+        done: function () {
+          $('.easteregg._1').toggle();
+        },
+        fail: function (str) {
+          console.log(str + ': fail');
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <div class='easteregg _0'>
+      <h1>Test 0: It Worked!</h1>
+    </div>
+    <div class='easteregg _1'>
+      <h1>Test 1: It Worked!</h1>
+    </div>
+  </body>
+</html>
