@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "main": "cheet.min.js",
   "ignore": [
+    "bower.json",
     "README.md",
     ".editorconfig",
     "test.html",
