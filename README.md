@@ -45,7 +45,7 @@ cheet('o n c e', function () {
 
 &nbsp;
 
-    <script src="bower_components/cheet.js/cheet.min.js" type="text/javascript"></script>
+    <script src="/bower_components/cheet.js/cheet.min.js" type="text/javascript"></script>
 
 ### API
 
