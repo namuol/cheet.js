@@ -50,7 +50,7 @@ cheet('o n c e', function () {
 ### API
 
 <a name='api_cheet'></a>
-#### [`cheet(sequence, done | {next,fail,done})`](#api_cheet)
+##### [`cheet(sequence, done | {next,fail,done})`](#api_cheet)
 
 Map a sequence of keypresses to a callback. This can be called multiple times.
 
@@ -87,7 +87,7 @@ Map a sequence of keypresses to a callback. This can be called multiple times.
 > > * `seq` - An array of [key names](#available-key-names) representing the sequence that is in progress.
 
 <a name='api_cheet'></a>
-#### [`cheet.disable(sequence)`](#api_disable)
+##### [`cheet.disable(sequence)`](#api_disable)
 
 Disable a previously-mapped sequence.
 
