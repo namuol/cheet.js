@@ -12,28 +12,32 @@ cheet('i d d q d', function () {
 
 ```javascript
 cheet('up up down down left right left right b a', {
-  next: function (key, num, sequence) {
+  next: function (str, key, num, seq) {
     console.log('key pressed: ' + key);
-    console.log('progress: ' + num / sequence.length);
-    console.log('sequence: ' + sequence.join(' '));
+    console.log('progress: ' + num / seq.length);
+    console.log('seq: ' + seq.join(' '));
   },
 
   fail: function () {
     console.log('sequence failed');
   },
 
-  done: function (sequence) {
+  done: function () {
     console.log('+30 lives ;)');
   }
 });
 ```
 
+### Demo
+
+[My personal site](http://namuol.github.io) uses cheet.js (Try the [Konami Code](http://en.wikipedia.org/wiki/Konami_Code))
+
 ### API
 
-#### `cheet(sequence, [done(str,seq) | {[next(str,key,num,seq)],[fail(str,seq)],[done(str,seq)]}])`
+#### `cheet(sequence, done | {next,fail,done})`
 
 ##### `sequence`
-A string representation of a sequence of key names.
+A string representation of a sequence of [key names](#available-key-names).
 
 Each keyname must be separated by a single space.
 
@@ -43,7 +47,7 @@ A callback to execute each time the sequence is correctly pressed.
 
 Arguments:
 * `str` - The string representation of the sequence that completed.
-* `seq` - An array of key-names representing the sequence that completed.
+* `seq` - An array of [key names](#available-key-names) representing the sequence that completed.
 
 ##### `fail(str, seq)`
 
@@ -51,7 +55,7 @@ A callback to execute each time a sequence's progress is broken.
 
 Arguments:
 * `str` - The string representation of the sequence that completed.
-* `seq` - An array of key-names representing the sequence that was pressed.
+* `seq` - An array of [key names](#available-key-names) representing the sequence that was pressed.
 
 ##### `next(str, key, num, seq)`
 
@@ -59,9 +63,9 @@ A callback to execute each time a correct key in the sequence is pressed.
 
 Arguments:
 * `str` - The string representation of the sequence that completed.
-* `key` - The name of the key that was just pressed.
+* `key` - The [name of the key](#available-key-names) that was just pressed.
 * `num` - A number representing the current progress of the sequence. (starts at 0)
-* `seq` - An array of key-names representing the sequence that is in progress.
+* `seq` - An array of [key names](#available-key-names) representing the sequence that is in progress.
 
 ### Available Key Names
 
@@ -69,13 +73,13 @@ Arguments:
 
 #### Directionals
 * `left`
-* `L` (alias for 'left')
+* `L` (alias for `left`)
 * `up`
-* `U` (alias for 'up')
+* `U` (alias for `up`)
 * `right`
-* `R` (alias for 'right')
+* `R` (alias for `right`)
 * `down`
-* `D` (alias for 'down')
+* `D` (alias for `down`)
 
 #### Alphanumeric
 * `0`-`9` (main number keys)
@@ -85,7 +89,7 @@ Arguments:
 * `backspace`
 * `tab`
 * `enter`
-* `return` (alias for 'enter')
+* `return` (alias for `enter`)
 * `shift`
 * `ctrl`
 * `alt`
@@ -100,13 +104,13 @@ Arguments:
 * `insert`
 * `delete`
 * `equal`
-* `=` (alias for 'equal')
+* `=` (alias for `equal`)
 * `comma`
-* `,` (alias for 'comma')
+* `,` (alias for `comma`)
 * `minus`
-* `-` (alias for 'minus')
+* `-` (alias for `minus`)
 * `period`
-* `.` (alias for 'period')
+* `.` (alias for `period`)
 
 #### Keypad
 * `kp_0`-`kp_9`
@@ -122,6 +126,3 @@ Arguments:
 ### TODO
 
 Automated tests and travis-ci integration.
-
-
-[Live Demo](http://namuol.github.io) (Try the [Konami Code](http://en.wikipedia.org/wiki/Konami_Code))
