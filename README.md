@@ -2,8 +2,6 @@
 
 ## easy easter eggs in the browser
 
-### Examples
-
 ```javascript
 cheet('i d d q d', function () {
   alert('god mode enabled');
@@ -28,6 +26,13 @@ cheet('up up down down left right left right b a', {
 });
 ```
 
+```javascript
+cheet('o n c e', function () {
+  console.log('This will only fire once.');
+  cheet.disable('o n c e');
+});
+```
+
 ### Demo
 
 [My personal site](http://namuol.github.io) uses cheet.js (Try the [Konami Code](http://en.wikipedia.org/wiki/Konami_Code))
@@ -47,26 +52,32 @@ cheet('up up down down left right left right b a', {
 <a name='api_cheet'></a>
 #### [`cheet(sequence, done | {next,fail,done})`](#api_cheet)
 
-> `sequence` (String)
+Map a sequence of keypresses to a callback. This can be called multiple times.
+
+> <a name='api_sequence'></a>
+> [`sequence`](#api_sequence) (String)
 > > A string representation of a sequence of [key names](#available-key-names).
 > > 
 > > Each keyname must be separated by a single space.
 > 
-> `done(str, seq)` (callback)
+> <a name='api_done'></a>
+> [`done(str, seq)`](#api_done) (callback)
 > > A callback to execute each time the sequence is correctly pressed.
 > > 
 > > Arguments:
 > > * `str` - The string representation of the sequence that completed.
 > > * `seq` - An array of [key names](#available-key-names) representing the sequence that completed.
 > 
-> `fail(str, seq)` (callback)
+> <a name='api_fail'></a>
+> [`fail(str, seq)`](#api_fail) (callback)
 > > A callback to execute each time a sequence's progress is broken.
 > > 
 > > Arguments:
 > > * `str` - The string representation of the sequence that completed.
 > > * `seq` - An array of [key names](#available-key-names) representing the sequence that was pressed.
-> 
-> `next(str, key, num, seq)` (callback)
+>
+> <a name='api_next'></a>
+> [`next(str, key, num, seq)`](#api_next) (callback)
 > > A callback to execute each time a correct key in the sequence is pressed.
 > > 
 > > Arguments:
@@ -74,6 +85,15 @@ cheet('up up down down left right left right b a', {
 > > * `key` - The [name of the key](#available-key-names) that was just pressed.
 > > * `num` - A number representing the current progress of the sequence. (starts at 0)
 > > * `seq` - An array of [key names](#available-key-names) representing the sequence that is in progress.
+
+<a name='api_cheet'></a>
+#### [`cheet.disable(sequence)`](#api_disable)
+
+Disable a previously-mapped sequence.
+
+> <a name='api_disable_sequence'></a>
+> [`sequence`](#api_disable_sequence) (String)
+> > The same string you used to map the callback when using [`cheet(...)`](#api_cheet).
 
 ### Available Key Names
 
