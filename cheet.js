@@ -125,14 +125,17 @@
       if (i > 0) {
         this.idx = 0;
         this.fail(this.str);
+        cheet.__fail(this.str);
       }
       return;
     }
 
     this.next(this.str, this.seq[i], i, this.seq);
+    cheet.__next(this.str, this.seq[i], i, this.seq);
 
     if (++this.idx === this.keys.length) {
       this.done(this.str);
+      cheet.__done(this.str);
       this.idx = 0;
     }
   };
@@ -174,6 +177,21 @@
   };
 
   on(window, 'keydown', keydown);
+
+  cheet.__next = NOOP;
+  cheet.next = function next (fn) {
+    cheet.__next = fn == null ? NOOP : fn;
+  };
+
+  cheet.__fail = NOOP;
+  cheet.fail = function fail (fn) {
+    cheet.__fail = fn == null ? NOOP : fn;
+  };
+
+  cheet.__done = NOOP;
+  cheet.done = function done (fn) {
+    cheet.__done = fn == null ? NOOP : fn;
+  };
 
   window.cheet = cheet;
 

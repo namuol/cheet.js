@@ -33,6 +33,24 @@ cheet('o n c e', function () {
 });
 ```
 
+```javascript
+var sequences = {
+  cross: 'up down left right',
+  circle: 'left up right down'
+};
+
+cheet(sequences.cross);
+cheet(sequences.circle);
+
+cheet.done(function (seq) {
+  if (seq === sequences.cross) {
+    console.log('cross!');
+  } else {
+    console.log('circle!');
+  }
+});
+```
+
 ### Demo
 
 [My personal site](http://namuol.github.io) uses cheet.js (Try the [Konami Code](http://en.wikipedia.org/wiki/Konami_Code))
@@ -54,46 +72,87 @@ cheet('o n c e', function () {
 
 Map a sequence of keypresses to a callback. This can be called multiple times.
 
-> <a name='api_sequence'></a>
-> [`sequence`](#api_sequence) (String)
+> <a name='api_cheet_sequence'></a>
+> [`sequence`](#api_cheet_sequence) (String)
 > > A string representation of a sequence of [key names](#available-key-names).
 > > 
 > > Each keyname must be separated by a single space.
 > 
-> <a name='api_done'></a>
-> [`done(str, seq)`](#api_done) (callback)
+> <a name='api_cheet_done'></a>
+> [`done(str, seq)`](#api_cheet_done) (callback)
 > > A callback to execute each time the sequence is correctly pressed.
 > > 
 > > Arguments:
 > > * `str` - The string representation of the sequence that completed.
 > > * `seq` - An array of [key names](#available-key-names) representing the sequence that completed.
 > 
-> <a name='api_fail'></a>
-> [`fail(str, seq)`](#api_fail) (callback)
+> <a name='api_cheet_fail'></a>
+> [`fail(str, seq)`](#api_cheet_fail) (callback)
 > > A callback to execute each time a sequence's progress is broken.
 > > 
 > > Arguments:
-> > * `str` - The string representation of the sequence that completed.
+> > * `str` - The string representation of the sequence that failed.
 > > * `seq` - An array of [key names](#available-key-names) representing the sequence that was pressed.
 >
-> <a name='api_next'></a>
-> [`next(str, key, num, seq)`](#api_next) (callback)
-> > A callback to execute each time a correct key in the sequence is pressed.
+> <a name='api_cheet_next'></a>
+> [`next(str, key, num, seq)`](#api_cheet_next) (callback)
+> > A callback to execute each time a correct key in the sequence is pressed *in order*.
 > > 
 > > Arguments:
-> > * `str` - The string representation of the sequence that completed.
+> > * `str` - The string representation of the sequence that is in progress.
 > > * `key` - The [name of the key](#available-key-names) that was just pressed.
 > > * `num` - A number representing the current progress of the sequence. (starts at 0)
 > > * `seq` - An array of [key names](#available-key-names) representing the sequence that is in progress.
 
-<a name='api_cheet'></a>
+<a name='api_done'></a>
+#### [`cheet.done(callback)`](#api_done)
+
+Set a global callback that executes whenever *any* mapped sequence is completed successfully.
+
+> <a name='api_done_callback'></a>
+> [`done(str, seq)`](#api_done_callback) (callback)
+> > A callback to execute each time *any* sequence is correctly pressed.
+> > 
+> > Arguments:
+> > * `str` - The string representation of the sequence that completed.
+> > * `seq` - An array of [key names](#available-key-names) representing the sequence that completed.
+
+<a name='api_next'></a>
+#### [`cheet.next(callback)`](#api_next)
+
+Set a global callback that executes whenever *any* mapped sequence progresses.
+
+> <a name='api_next_callback'></a>
+> [`callback(str, key, num, seq)`](#api_next_callback) (callback)
+> > A callback to execute each time a correct key in any sequence is pressed *in order*.
+> > 
+> > Arguments:
+> > * `str` - The string representation of the sequence that is in progress.
+> > * `key` - The [name of the key](#available-key-names) that was just pressed.
+> > * `num` - A number representing the current progress of the sequence. (starts at 0)
+> > * `seq` - An array of [key names](#available-key-names) representing the sequence that is in progress.
+
+<a name='api_fail'></a>
+#### [`cheet.fail(callback)`](#api_fail)
+
+Set a global callback that executes whenever *any* in-progress sequence is broken.
+
+> <a name='api_fail_callback'></a>
+> [`callback(str, seq)`](#api_fail_callback) (callback)
+> > A callback to execute each time *any* sequence's progress is broken.
+> > 
+> > Arguments:
+> > * `str` - The string representation of the sequence that failed.
+> > * `seq` - An array of [key names](#available-key-names) representing the sequence that was pressed.
+
+<a name='api_disable'></a>
 #### [`cheet.disable(sequence)`](#api_disable)
 
 Disable a previously-mapped sequence.
 
 > <a name='api_disable_sequence'></a>
 > [`sequence`](#api_disable_sequence) (String)
-> > The same string you used to map the callback when using [`cheet(...)`](#api_cheet).
+> > The same string you used to map the callback when using [`cheet(seq, ...)`](#api_cheet).
 
 ### Available Key Names
 

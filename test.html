@@ -23,8 +23,21 @@
           $('.easteregg._1').toggle();
         },
         fail: function (str) {
-          console.log(str + ': fail');
+          console.log(str + ': failz0rz');
         }
+      });
+
+      cheet('o n c e', function () {
+        $('.easteregg._2').toggle();
+        cheet.disable('o n c e');
+      });
+
+      cheet.done(function (seq) {
+        console.log('COMPLETE: ' + seq);
+      });
+
+      cheet.next(function (seq, key) {
+        console.log('NEXT: ' + seq + '; ' + key);
       });
     </script>
   </head>
@@ -35,6 +48,9 @@
     </div>
     <div class='easteregg _1'>
       <h1>Test 1: It Worked!</h1>
+    </div>
+    <div class='easteregg _2'>
+      <h1>Test 2: It Worked! (should only fire once)</h1>
     </div>
   </body>
 </html>
