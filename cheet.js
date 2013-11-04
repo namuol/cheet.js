@@ -99,6 +99,7 @@
         period: 190,
         '.': 190
       },
+      Sequence,
       NOOP = function NOOP() {};
 
   Sequence = function Sequence(str, next, fail, done) {
@@ -159,6 +160,7 @@
   };
 
   function keydown (e) {
+    var id;
     for (id in sequences) {
       sequences[id].keydown(e ? e.keyCode : event.keyCode);
     }
@@ -171,26 +173,26 @@
       obj['e' + type + fn] = fn;
       obj[type + fn] = function () {
         obj['e' + type + fn](window.event);
-      }
+      };
       obj.attachEvent('on' + type, obj[type + fn]);
     }
-  };
+  }
 
   on(window, 'keydown', keydown);
 
   cheet.__next = NOOP;
   cheet.next = function next (fn) {
-    cheet.__next = fn == null ? NOOP : fn;
+    cheet.__next = fn === null ? NOOP : fn;
   };
 
   cheet.__fail = NOOP;
   cheet.fail = function fail (fn) {
-    cheet.__fail = fn == null ? NOOP : fn;
+    cheet.__fail = fn === null ? NOOP : fn;
   };
 
   cheet.__done = NOOP;
   cheet.done = function done (fn) {
-    cheet.__done = fn == null ? NOOP : fn;
+    cheet.__done = fn === null ? NOOP : fn;
   };
 
   window.cheet = cheet;
