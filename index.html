@@ -1,0 +1,373 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>cheet.js by namuol</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>cheet.js</h1>
+        <p>easy easter eggs (konami code, etc) for your site.</p>
+        <p class="view"><a href="https://github.com/namuol/cheet.js">View the Project on GitHub <small>namuol/cheet.js</small></a></p>
+        <ul>
+          <li><a href="https://github.com/namuol/cheet.js/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/namuol/cheet.js/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/namuol/cheet.js">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <div class="highlight highlight-javascript"><pre><span class="nx">cheet</span><span class="p">(</span><span class="s1">'i d d q d'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">alert</span><span class="p">(</span><span class="s1">'god mode enabled'</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">cheet</span><span class="p">(</span><span class="s1">'up up down down left right left right b a'</span><span class="p">,</span> <span class="p">{</span>
+  <span class="nx">next</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">str</span><span class="p">,</span> <span class="nx">key</span><span class="p">,</span> <span class="nx">num</span><span class="p">,</span> <span class="nx">seq</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'key pressed: '</span> <span class="o">+</span> <span class="nx">key</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'progress: '</span> <span class="o">+</span> <span class="nx">num</span> <span class="o">/</span> <span class="nx">seq</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'seq: '</span> <span class="o">+</span> <span class="nx">seq</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">' '</span><span class="p">));</span>
+  <span class="p">},</span>
+
+  <span class="nx">fail</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'sequence failed'</span><span class="p">);</span>
+  <span class="p">},</span>
+
+  <span class="nx">done</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'+30 lives ;)'</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">cheet</span><span class="p">(</span><span class="s1">'o n c e'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'This will only fire once.'</span><span class="p">);</span>
+  <span class="nx">cheet</span><span class="p">.</span><span class="nx">disable</span><span class="p">(</span><span class="s1">'o n c e'</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+
+<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">sequences</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">cross</span><span class="o">:</span> <span class="s1">'up down left right'</span><span class="p">,</span>
+  <span class="nx">circle</span><span class="o">:</span> <span class="s1">'left up right down'</span>
+<span class="p">};</span>
+
+<span class="nx">cheet</span><span class="p">(</span><span class="nx">sequences</span><span class="p">.</span><span class="nx">cross</span><span class="p">);</span>
+<span class="nx">cheet</span><span class="p">(</span><span class="nx">sequences</span><span class="p">.</span><span class="nx">circle</span><span class="p">);</span>
+
+<span class="nx">cheet</span><span class="p">.</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">seq</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">seq</span> <span class="o">===</span> <span class="nx">sequences</span><span class="p">.</span><span class="nx">cross</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'cross!'</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'circle!'</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+
+<h3>
+<a name="demo" class="anchor" href="#demo"><span class="octicon octicon-link"></span></a>Demo</h3>
+
+<p><a href="http://namuol.github.io">My personal site</a> uses cheet.js (Try the <a href="http://en.wikipedia.org/wiki/Konami_Code">Konami Code</a>)</p>
+
+<h3>
+<a name="install" class="anchor" href="#install"><span class="octicon octicon-link"></span></a>Install</h3>
+
+<h4>
+<a name="bower" class="anchor" href="#bower"><span class="octicon octicon-link"></span></a>bower</h4>
+
+<pre><code>bower install cheet.js
+</code></pre>
+
+<p> </p>
+
+<pre><code>&lt;script src="/bower_components/cheet.js/cheet.min.js" type="text/javascript"&gt;&lt;/script&gt;
+</code></pre>
+
+<h3>
+<a name="api" class="anchor" href="#api"><span class="octicon octicon-link"></span></a>API</h3>
+
+<p><a name="api_cheet"></a></p>
+
+<h4>
+<a name="cheetsequence-done--nextfaildone" class="anchor" href="#cheetsequence-done--nextfaildone"><span class="octicon octicon-link"></span></a><a href="#api_cheet"><code>cheet(sequence, done | {next,fail,done})</code></a>
+</h4>
+
+<p>Map a sequence of keypresses to a callback. This can be called multiple times.</p>
+
+<blockquote>
+<p><a name="api_cheet_sequence"></a>
+<a href="#api_cheet_sequence"><code>sequence</code></a> (String)</p>
+
+<blockquote>
+<p>A string representation of a sequence of <a href="#available-key-names">key names</a>.</p>
+
+<p>Each keyname must be separated by a single space.</p>
+</blockquote>
+
+<p><a name="api_cheet_done"></a>
+<a href="#api_cheet_done"><code>done(str, seq)</code></a> (callback)</p>
+
+<blockquote>
+<p>A callback to execute each time the sequence is correctly pressed.</p>
+
+<p>Arguments:</p>
+
+<ul>
+<li>
+<code>str</code> - The string representation of the sequence that completed.</li>
+<li>
+<code>seq</code> - An array of <a href="#available-key-names">key names</a> representing the sequence that completed.</li>
+</ul>
+</blockquote>
+
+<p><a name="api_cheet_fail"></a>
+<a href="#api_cheet_fail"><code>fail(str, seq)</code></a> (callback)</p>
+
+<blockquote>
+<p>A callback to execute each time a sequence's progress is broken.</p>
+
+<p>Arguments:</p>
+
+<ul>
+<li>
+<code>str</code> - The string representation of the sequence that failed.</li>
+<li>
+<code>seq</code> - An array of <a href="#available-key-names">key names</a> representing the sequence that was pressed.</li>
+</ul>
+</blockquote>
+
+<p><a name="api_cheet_next"></a>
+<a href="#api_cheet_next"><code>next(str, key, num, seq)</code></a> (callback)</p>
+
+<blockquote>
+<p>A callback to execute each time a correct key in the sequence is pressed <em>in order</em>.</p>
+
+<p>Arguments:</p>
+
+<ul>
+<li>
+<code>str</code> - The string representation of the sequence that is in progress.</li>
+<li>
+<code>key</code> - The <a href="#available-key-names">name of the key</a> that was just pressed.</li>
+<li>
+<code>num</code> - A number representing the current progress of the sequence. (starts at 0)</li>
+<li>
+<code>seq</code> - An array of <a href="#available-key-names">key names</a> representing the sequence that is in progress.</li>
+</ul>
+</blockquote>
+</blockquote>
+
+<p><a name="api_done"></a></p>
+
+<h4>
+<a name="cheetdonecallback" class="anchor" href="#cheetdonecallback"><span class="octicon octicon-link"></span></a><a href="#api_done"><code>cheet.done(callback)</code></a>
+</h4>
+
+<p>Set a global callback that executes whenever <em>any</em> mapped sequence is completed successfully.</p>
+
+<blockquote>
+<p><a name="api_done_callback"></a>
+<a href="#api_done_callback"><code>done(str, seq)</code></a> (callback)</p>
+
+<blockquote>
+<p>A callback to execute each time <em>any</em> sequence is correctly pressed.</p>
+
+<p>Arguments:</p>
+
+<ul>
+<li>
+<code>str</code> - The string representation of the sequence that completed.</li>
+<li>
+<code>seq</code> - An array of <a href="#available-key-names">key names</a> representing the sequence that completed.</li>
+</ul>
+</blockquote>
+</blockquote>
+
+<p><a name="api_next"></a></p>
+
+<h4>
+<a name="cheetnextcallback" class="anchor" href="#cheetnextcallback"><span class="octicon octicon-link"></span></a><a href="#api_next"><code>cheet.next(callback)</code></a>
+</h4>
+
+<p>Set a global callback that executes whenever <em>any</em> mapped sequence progresses.</p>
+
+<blockquote>
+<p><a name="api_next_callback"></a>
+<a href="#api_next_callback"><code>callback(str, key, num, seq)</code></a> (callback)</p>
+
+<blockquote>
+<p>A callback to execute each time a correct key in any sequence is pressed <em>in order</em>.</p>
+
+<p>Arguments:</p>
+
+<ul>
+<li>
+<code>str</code> - The string representation of the sequence that is in progress.</li>
+<li>
+<code>key</code> - The <a href="#available-key-names">name of the key</a> that was just pressed.</li>
+<li>
+<code>num</code> - A number representing the current progress of the sequence. (starts at 0)</li>
+<li>
+<code>seq</code> - An array of <a href="#available-key-names">key names</a> representing the sequence that is in progress.</li>
+</ul>
+</blockquote>
+</blockquote>
+
+<p><a name="api_fail"></a></p>
+
+<h4>
+<a name="cheetfailcallback" class="anchor" href="#cheetfailcallback"><span class="octicon octicon-link"></span></a><a href="#api_fail"><code>cheet.fail(callback)</code></a>
+</h4>
+
+<p>Set a global callback that executes whenever <em>any</em> in-progress sequence is broken.</p>
+
+<blockquote>
+<p><a name="api_fail_callback"></a>
+<a href="#api_fail_callback"><code>callback(str, seq)</code></a> (callback)</p>
+
+<blockquote>
+<p>A callback to execute each time <em>any</em> sequence's progress is broken.</p>
+
+<p>Arguments:</p>
+
+<ul>
+<li>
+<code>str</code> - The string representation of the sequence that failed.</li>
+<li>
+<code>seq</code> - An array of <a href="#available-key-names">key names</a> representing the sequence that was pressed.</li>
+</ul>
+</blockquote>
+</blockquote>
+
+<p><a name="api_disable"></a></p>
+
+<h4>
+<a name="cheetdisablesequence" class="anchor" href="#cheetdisablesequence"><span class="octicon octicon-link"></span></a><a href="#api_disable"><code>cheet.disable(sequence)</code></a>
+</h4>
+
+<p>Disable a previously-mapped sequence.</p>
+
+<blockquote>
+<p><a name="api_disable_sequence"></a>
+<a href="#api_disable_sequence"><code>sequence</code></a> (String)</p>
+
+<blockquote>
+<p>The same string you used to map the callback when using <a href="#api_cheet"><code>cheet(seq, ...)</code></a>.</p>
+</blockquote>
+</blockquote>
+
+<h3>
+<a name="available-key-names" class="anchor" href="#available-key-names"><span class="octicon octicon-link"></span></a>Available Key Names</h3>
+
+<p><strong>NOTE</strong>: Key names are case-sensitive</p>
+
+<h4>
+<a name="directionals" class="anchor" href="#directionals"><span class="octicon octicon-link"></span></a>Directionals</h4>
+
+<ul>
+<li><code>left</code></li>
+<li>
+<code>L</code> (alias for <code>left</code>)</li>
+<li><code>up</code></li>
+<li>
+<code>U</code> (alias for <code>up</code>)</li>
+<li><code>right</code></li>
+<li>
+<code>R</code> (alias for <code>right</code>)</li>
+<li><code>down</code></li>
+<li>
+<code>D</code> (alias for <code>down</code>)</li>
+</ul><h4>
+<a name="alphanumeric" class="anchor" href="#alphanumeric"><span class="octicon octicon-link"></span></a>Alphanumeric</h4>
+
+<ul>
+<li>
+<code>0</code>-<code>9</code> (main number keys)</li>
+<li>
+<code>a</code>-<code>z</code>
+</li>
+</ul><h4>
+<a name="misc" class="anchor" href="#misc"><span class="octicon octicon-link"></span></a>Misc</h4>
+
+<ul>
+<li><code>backspace</code></li>
+<li><code>tab</code></li>
+<li><code>enter</code></li>
+<li>
+<code>return</code> (alias for <code>enter</code>)</li>
+<li><code>shift</code></li>
+<li><code>ctrl</code></li>
+<li><code>alt</code></li>
+<li><code>pause</code></li>
+<li><code>capslock</code></li>
+<li><code>esc</code></li>
+<li><code>space</code></li>
+<li><code>pageup</code></li>
+<li><code>pagedown</code></li>
+<li><code>end</code></li>
+<li><code>home</code></li>
+<li><code>insert</code></li>
+<li><code>delete</code></li>
+<li><code>equal</code></li>
+<li>
+<code>=</code> (alias for <code>equal</code>)</li>
+<li><code>comma</code></li>
+<li>
+<code>,</code> (alias for <code>comma</code>)</li>
+<li><code>minus</code></li>
+<li>
+<code>-</code> (alias for <code>minus</code>)</li>
+<li><code>period</code></li>
+<li>
+<code>.</code> (alias for <code>period</code>)</li>
+</ul><h4>
+<a name="keypad" class="anchor" href="#keypad"><span class="octicon octicon-link"></span></a>Keypad</h4>
+
+<ul>
+<li>
+<code>kp_0</code>-<code>kp_9</code>
+</li>
+<li><code>kp_multiply</code></li>
+<li><code>kp_plus</code></li>
+<li><code>kp_minus</code></li>
+<li><code>kp_decimal</code></li>
+<li><code>kp_divide</code></li>
+</ul><h4>
+<a name="function-keys" class="anchor" href="#function-keys"><span class="octicon octicon-link"></span></a>Function keys</h4>
+
+<ul>
+<li>
+<code>f1</code>-<code>f12</code>
+</li>
+</ul><h3>
+<a name="todo" class="anchor" href="#todo"><span class="octicon octicon-link"></span></a>TODO</h3>
+
+<p>Automated tests and travis-ci integration.</p>
+      </section>
+    </div>
+    <footer>
+      <p>Project maintained by <a href="https://github.com/namuol">namuol</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-33247419-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
