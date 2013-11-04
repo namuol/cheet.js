@@ -158,12 +158,29 @@ h3, h4, h5, h6 {
 }
 
 blockquote {
-  margin: 0 -20px 20px;
-  padding: 20px;
+  margin: 0 0 20px 0;
   font-style: italic;
   background: #ccc;
   background: rgba(0, 0, 0, 0.06);
   color: #222;
+  padding: 20px;
+  padding-top: 0;
+}
+
+blockquote > p {
+  padding-top: 20px;
+}
+
+blockquote blockquote {
+  margin-bottom: 0;
+}
+
+blockquote blockquote p {
+  margin-bottom: 10px;
+}
+
+blockquote blockquote ul {
+  margin-bottom: 0;
 }
 
 img {
@@ -174,7 +191,7 @@ pre {
   font-family: Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, monospace;
   color: #333;
   font-size: 12px;
-  overflow-x: auto;
+  overflow-x: hidden;
 }
 
 pre {
