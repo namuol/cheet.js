@@ -110,7 +110,7 @@ Map a sequence of keypresses to a callback. This can be called multiple times.
 Set a global callback that executes whenever *any* mapped sequence is completed successfully.
 
 > <a name='api_done_callback'></a>
-> [`done(str, seq)`](#api_done_callback) (callback)
+> [`callback(str, seq)`](#api_done_callback) (callback)
 > > A callback to execute each time *any* sequence is correctly pressed.
 > > 
 > > Arguments:
