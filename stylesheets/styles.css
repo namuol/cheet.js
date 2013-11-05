@@ -67,6 +67,7 @@ header p.view {
   display: none;
   font-weight: 700;
   -webkit-font-smoothing: antialiased;
+  background: whitesmoke;
 }
 header p.view a {
   color: #06c;
@@ -284,6 +285,12 @@ footer p + p {
   }
   footer p + p {
     float: none;
+  }
+  pre, blockquote {
+    margin: 0 -20px 20px;
+  }
+  header p {
+    font-size: 20px;
   }
 }
 @media print, screen and (max-width:580px) {
