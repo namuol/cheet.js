@@ -168,6 +168,14 @@ h3, h4, h5, h6 {
   color: white;
 }
 
+h4 {
+  font-size: 160%;
+}
+
+blockquote h4 {
+  font-size: 100%;
+}
+
 blockquote {
   margin: 0 0 20px 0;
   background: #ccc;
@@ -291,6 +299,9 @@ footer p + p {
   }
   header p {
     font-size: 20px;
+  }
+  h4 {
+    font-size: 120%;
   }
 }
 @media print, screen and (max-width:580px) {
