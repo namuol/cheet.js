@@ -21,8 +21,13 @@ header, section, footer {
 }
 
 a {
-  color: #069;
-  text-decoration: none;
+  color: black;
+  border-bottom: 1px solid rgba(0,0,0,0.25);
+  text-decoration: none;  
+}
+
+a:hover {
+  color: #479;
 }
 
 p {
@@ -51,11 +56,11 @@ header.without-description h1 {
 }
 header p {
   margin: 0;
-  color: #61778B;
   width: 100%;
   font-size: 26px;
   text-align: center;
-  margin-top: 24px;
+  margin-top: 10px;
+  color: rgba(0,0,0,0.6);
 }
 header p.view {
   display: none;
@@ -112,11 +117,13 @@ header ul a {
   font-weight: 400;
   padding-top: 6px;
   height: 40px;
+  border: none;
 }
 header ul a strong {
   font-size: 14px;
   display: block;
   -webkit-font-smoothing: antialiased;
+  border: none;
 }
 header ul li a {
   color: black;
@@ -249,7 +256,6 @@ footer {
 }
 footer a {
   color: #aaa;
-  font-weight: bold;
 }
 footer p {
   float: left;
