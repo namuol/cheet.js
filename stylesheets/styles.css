@@ -8,7 +8,8 @@ body {
   margin: 0;
   font-weight: 300;
   font: 14px/1.5 "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: black;
+  color: white;
+  background: #3A3C42;
 }
 
 .wrapper {
@@ -21,13 +22,13 @@ header, section, footer {
 }
 
 a {
-  color: black;
-  border-bottom: 1px solid rgba(0,0,0,0.25);
+  color: white;
+  border-bottom: 1px solid rgba(255,255,255,0.25);
   text-decoration: none;  
 }
 
 a:hover {
-  color: #479;
+  color: #e6db74;
 }
 
 p {
@@ -36,7 +37,7 @@ p {
 }
 
 strong {
-  color: #222;
+  color: white;
   font-weight: 700;
 }
 
@@ -60,7 +61,7 @@ header p {
   font-size: 26px;
   text-align: center;
   margin-top: 10px;
-  color: rgba(0,0,0,0.6);
+  color: #e6db74;
 }
 header p.view {
   display: none;
@@ -126,21 +127,21 @@ header ul a strong {
   border: none;
 }
 header ul li a {
-  color: black;
+  color: white;
 }
 header ul li:hover strong, header ul li:hover a {
-  color: #666;
+  color: #f92672;
 }
 
 section {
   padding: 15px 20px;
   font-size: 15px;
-  border-top: 1px solid #fff;
+  /* border-top: 1px solid #fff; */
   position: relative;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #222;
+  color: #a6e22e;
   padding: 0;
   margin: 0 0 20px;
   line-height: 1.2;
@@ -163,14 +164,14 @@ h2 {
 }
 
 h3, h4, h5, h6 {
-  color: #494949;
+  color: white;
 }
 
 blockquote {
   margin: 0 0 20px 0;
   background: #ccc;
-  background: rgba(0, 0, 0, 0.06);
-  color: #222;
+  background: rgba(0, 0, 0, 0.3);
+  color: whitesmoke;
   padding: 20px;
   padding-top: 0;
 }
@@ -204,9 +205,9 @@ pre {
 
 pre {
   padding: 20px;
-  background: #3A3C42;
+  background: rgba(0,0,0,0.5);
   color: #f8f8f2;
-  margin: 0 -20px 20px;
+  /* margin: 0 -20px 20px; */
 }
 pre code {
   color: #f8f8f2;
@@ -251,11 +252,11 @@ footer {
   width: 640px;
   margin: 0 auto;
   padding: 20px 0 0;
-  color: #ccc;
+  color: #666;
   overflow: hidden;
 }
 footer a {
-  color: #aaa;
+  color: #666;
 }
 footer p {
   float: left;
@@ -302,4 +303,12 @@ footer p + p {
   header p.view a small:before {
     content: 'at http://github.com/';
   }
+}
+
+a code {
+    color: #a6e22e;
+}
+
+a:hover code {
+    color: #e6db74;
 }
