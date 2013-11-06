@@ -9,6 +9,14 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="cheet.js"></script>
     <script>
+
+      // For testing key-repeat stifling:
+      cheet('a a a a a a a a', {
+        next: function () {
+          console.log('next a!');
+        }
+      });
+
       cheet('a b c d', function () {
         $('.easteregg._0').toggle();
       });

@@ -100,7 +100,8 @@
         '.': 190
       },
       Sequence,
-      NOOP = function NOOP() {};
+      NOOP = function NOOP() {},
+      held = {};
 
   Sequence = function Sequence(str, next, fail, done) {
     var i;
@@ -160,10 +161,20 @@
   };
 
   function keydown (e) {
-    var id;
+    var id,
+        k = e ? e.keyCode : event.keyCode;
+
+    if (held[k]) return;
+    held[k] = true;
+
     for (id in sequences) {
-      sequences[id].keydown(e ? e.keyCode : event.keyCode);
+      sequences[id].keydown(k);
     }
+  }
+
+  function keyup (e) {
+    var k = e ? e.keyCode : event.keyCode;
+    held[k] = false;
   }
 
   function on (obj, type, fn) {
@@ -179,6 +190,7 @@
   }
 
   on(window, 'keydown', keydown);
+  on(window, 'keyup', keyup);
 
   cheet.__next = NOOP;
   cheet.next = function next (fn) {
