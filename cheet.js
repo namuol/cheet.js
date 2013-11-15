@@ -147,7 +147,7 @@
 
     if (typeof handlers === 'function') {
       done = handlers;
-    } else {
+    } else if (handlers != null) {
       next = handlers.next;
       fail = handlers.fail;
       done = handlers.done;

@@ -9,7 +9,6 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="cheet.js"></script>
     <script>
-
       // For testing key-repeat stifling:
       cheet('a a a a a a a a', {
         next: function () {
@@ -40,8 +39,21 @@
         cheet.disable('o n c e');
       });
 
+      var sequences = {
+        cross: 'up down left right',
+        circle: 'left up right down'
+      };
+
+      cheet(sequences.cross);
+      cheet(sequences.circle);
+
       cheet.done(function (seq) {
         console.log('COMPLETE: ' + seq);
+        if (seq === sequences.cross) {
+          console.log('cross!');
+        } else {
+          console.log('circle!');
+        }
       });
 
       cheet.next(function (seq, key) {
