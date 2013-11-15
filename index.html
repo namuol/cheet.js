@@ -66,7 +66,7 @@
 <span class="nx">cheet</span><span class="p">.</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">seq</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span><span class="nx">seq</span> <span class="o">===</span> <span class="nx">sequences</span><span class="p">.</span><span class="nx">cross</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'cross!'</span><span class="p">);</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="p">}</span> <span class="k">else if</span> <span class="p">(</span><span class="nx">seq</span> <span class="o">===</span> <span class="nx">sequences</span><span class="p">.</span><span class="nx">circle</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'circle!'</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">});</span>
@@ -365,6 +365,48 @@
             pageTracker._trackPageview();
             } catch(err) {}
           </script>
+    <script src="/javascripts/cheet.js" type="text/javascript"></script>
+    <script type='text/javascript'>
+      cheet('i d d q d', function () {
+        alert('god mode enabled');
+      });
 
+      cheet('up up down down left right left right b a', {
+        next: function (str, key, num, seq) {
+          console.log('key pressed: ' + key);
+          console.log('progress: ' + num / seq.length);
+          console.log('seq: ' + seq.join(' '));
+        },
+
+        fail: function () {
+          console.log('sequence failed');
+        },
+
+        done: function () {
+          console.log('+30 lives ;)');
+        }
+      });
+
+      cheet('o n c e', function () {
+        console.log('This will only fire once.');
+        cheet.disable('o n c e');
+      });
+
+      var sequences = {
+        cross: 'up down left right',
+        circle: 'left up right down'
+      };
+
+      cheet(sequences.cross);
+      cheet(sequences.circle);
+
+      cheet.done(function (seq) {
+        if (seq === sequences.cross) {
+          console.log('cross!');
+        } else if (seq === sequences.circle) {
+          console.log('circle!');
+        }
+      });
+    </script>
   </body>
 </html>
