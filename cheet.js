@@ -177,6 +177,13 @@
     held[k] = false;
   }
 
+  function reset (e) {
+    var k;
+    for (k in held) {
+      held[k] = false;
+    }
+  }
+
   function on (obj, type, fn) {
     if (obj.addEventListener) {
       obj.addEventListener(type, fn, false);
@@ -191,6 +198,8 @@
 
   on(window, 'keydown', keydown);
   on(window, 'keyup', keyup);
+  on(window, 'blur', reset);
+  on(window, 'focus', reset);
 
   cheet.__next = NOOP;
   cheet.next = function next (fn) {
