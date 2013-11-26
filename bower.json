@@ -1,9 +1,19 @@
 {
   "name": "cheet.js",
   "version": "0.2.2",
-  "main": "cheet.js",
+  "description": "easy easter eggs (konami code, etc) for your site",
+  "keywords": [
+    "cheet",
+    "cheat",
+    "easter",
+    "eggs",
+    "keyboard",
+    "silly"
+  ],
+  "license": "MIT",
   "ignore": [
     ".editorconfig",
     "test.html"
-  ]
+  ],
+  "main": "cheet.js"
 }

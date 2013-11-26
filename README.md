@@ -63,7 +63,15 @@ cheet.done(function (seq) {
 
 &nbsp;
 
-    <script src="/bower_components/cheet.js/cheet.min.js" type="text/javascript"></script>
+    <script src="/bower_components/cheet.js/cheet.js" type="text/javascript"></script>
+
+#### component
+
+    component install namuol/cheet.js
+
+&nbsp;
+
+    <script src="/components/namuol-cheet.js/cheet.js" type="text/javascript"></script>
 
 ### API
 
@@ -176,10 +184,17 @@ Disable a previously-mapped sequence.
 * `backspace`
 * `tab`
 * `enter`
-* `return` (alias for `enter`)
+  * `return`
 * `shift`
-* `ctrl`
+  * `⇧`
+* `control`
+  * `ctrl`
+  * `⌃`
 * `alt`
+  * `option`
+  * `⌥`
+* `command`
+  * `⌘`
 * `pause`
 * `capslock`
 * `esc`
@@ -191,13 +206,13 @@ Disable a previously-mapped sequence.
 * `insert`
 * `delete`
 * `equal`
-* `=` (alias for `equal`)
+  * `=`
 * `comma`
-* `,` (alias for `comma`)
+  * `,`
 * `minus`
-* `-` (alias for `minus`)
+  * `-`
 * `period`
-* `.` (alias for `period`)
+  * `.`
 
 #### Keypad
 * `kp_0`-`kp_9`
@@ -209,6 +224,10 @@ Disable a previously-mapped sequence.
 
 #### Function keys
 * `f1`-`f12`
+
+### LICENSE
+
+MIT
 
 ### TODO
 
