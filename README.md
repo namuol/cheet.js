@@ -232,3 +232,9 @@ MIT
 ### TODO
 
 Automated tests and travis-ci integration.
+
+### Acknowledgements
+
+`cheet.js` was just a fun little one-night project I made to put easter eggs on my personal site.
+
+If you're looking for something more useful/serious, check out [Mousetrap](https://github.com/ccampbell/mousetrap).
