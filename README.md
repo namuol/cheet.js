@@ -51,6 +51,10 @@ cheet.done(function (seq) {
 });
 ```
 
+```javascript
+cheet('↑ ↑ ↓ ↓ ← → ← → b a', function () { alert('Voilà!'); });
+```
+
 ### Demo
 
 [My personal site](http://namuol.github.io) uses cheet.js (Try the [Konami Code](http://en.wikipedia.org/wiki/Konami_Code))
