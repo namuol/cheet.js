@@ -1,4 +1,4 @@
-# cheet.js
+# cheet.js [![Build Status](https://travis-ci.org/namuol/cheet.js.png?branch=master)](https://travis-ci.org/namuol/cheet.js)
 
 ## easy easter eggs in the browser
 
@@ -237,11 +237,25 @@ Disable a previously-mapped sequence.
 
 MIT
 
-### TODO
+### TESTING
 
-Automated tests and travis-ci integration.
+From the cheet.js' root directory:
+
+```shell
+grunt test
+```
+
+You can also run the tests directly in your browser:
+
+```shell
+grunt test.open
+```
 
 ### Acknowledgements
+
+Special thanks to [Guilherme J. Tramontina](http://github.com/gtramontina) for writing the delicious mocha test suite.
+
+---
 
 `cheet.js` was just a fun little one-night project I made to put easter eggs on my personal site.
 
