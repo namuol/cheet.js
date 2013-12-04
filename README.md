@@ -172,13 +172,17 @@ Disable a previously-mapped sequence.
 
 #### Directionals
 * `left`
-* `L` (alias for `left`)
+  * `L`
+  * `←`
 * `up`
-* `U` (alias for `up`)
+  * `U`
+  * `↑`
 * `right`
-* `R` (alias for `right`)
+  * `R`
+  * `→`
 * `down`
-* `D` (alias for `down`)
+  * `D`
+  * `↓`
 
 #### Alphanumeric
 * `0`-`9` (main number keys)
