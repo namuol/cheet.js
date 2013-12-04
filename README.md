@@ -253,7 +253,7 @@ grunt test.open
 
 ### Acknowledgements
 
-Special thanks to [Guilherme J. Tramontina](http://github.com/gtramontina) for writing the delicious [chai](http://chaijs.com/) test suite.
+Special thanks to [Guilherme J. Tramontina](http://github.com/gtramontina) for writing the delicious [mocha](http://visionmedia.github.io/mocha/)/[chai](http://chaijs.com/) test suite.
 
 ---
 
