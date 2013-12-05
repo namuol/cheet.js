@@ -44,6 +44,8 @@ body {
 
 .wrapper > * {
   -webkit-transition: 500ms;
+  -moz-transition: 500ms;
+  transition: 500ms;
 }
 
 .intro .wrapper > header {
