@@ -3,13 +3,17 @@
 ## easy easter eggs in the browser
 
 ```javascript
+cheet('↑ ↑ ↓ ↓ ← → ← → b a', function () { alert('Voilà!'); });
+```
+
+```javascript
 cheet('i d d q d', function () {
   alert('god mode enabled');
 });
 ```
 
 ```javascript
-cheet('up up down down left right left right b a', {
+cheet('o n e a t a t i m e', {
   next: function (str, key, num, seq) {
     console.log('key pressed: ' + key);
     console.log('progress: ' + num / seq.length);
@@ -51,10 +55,6 @@ cheet.done(function (seq) {
 });
 ```
 
-```javascript
-cheet('↑ ↑ ↓ ↓ ← → ← → b a', function () { alert('Voilà!'); });
-```
-
 ### Demo
 
 [My personal site](http://namuol.github.io) uses cheet.js (Try the [Konami Code](http://en.wikipedia.org/wiki/Konami_Code))
@@ -65,15 +65,11 @@ cheet('↑ ↑ ↓ ↓ ← → ← → b a', function () { alert('Voilà!'); });
 
     bower install cheet.js
 
-&nbsp;
-
     <script src="/bower_components/cheet.js/cheet.js" type="text/javascript"></script>
 
 #### component
 
     component install namuol/cheet.js
-
-&nbsp;
 
     <script src="/components/namuol-cheet.js/cheet.js" type="text/javascript"></script>
 
@@ -233,11 +229,11 @@ Disable a previously-mapped sequence.
 #### Function keys
 * `f1`-`f12`
 
-### LICENSE
+### License
 
 MIT
 
-### TESTING
+### Testing
 
 From the cheet.js' root directory:
 
@@ -250,6 +246,8 @@ You can also run the tests directly in your browser:
 ```shell
 grunt test.open
 ```
+
+Or just [view them online](http://namuol.github.io/cheet.js/tests).
 
 ### Acknowledgements
 
