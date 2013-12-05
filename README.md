@@ -209,6 +209,7 @@ Disable a previously-mapped sequence.
 
 #### Function keys
 * `f1`-`f12`
+
 ### License
 
 MIT
