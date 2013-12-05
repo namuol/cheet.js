@@ -1,5 +1,5 @@
 !!!
-html.intro
+html.intro.ffhack
   head
     title cheet.js - easy easter eggs (konami code, etc) for your site
     meta(charset='utf-8')
@@ -98,7 +98,8 @@ html.intro
         }
 
         if (localStorage.getItem('cheeted')) {
-          $('html').removeClass('intro');
+          $('html').removeClass('intro')
+          setTimeout(function () { $('html').removeClass('ffhack'); }, 10);
           setupCheets();
         } else {
           $('header > h1').text('');
@@ -111,6 +112,7 @@ html.intro
             },
             done: function () {
               $('html').removeClass('intro');
+              setTimeout(function () { $('html').removeClass('ffhack'); }, 10);
               cheet.disable('c h e e t . j s');
               localStorage.setItem('cheeted', 'true');
               setupCheets();
@@ -126,4 +128,3 @@ html.intro
           var pageTracker = _gat._getTracker("UA-33247419-1");
           pageTracker._trackPageview();
         } catch(err) {}
-

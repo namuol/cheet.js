@@ -1,12 +1,12 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
 
+html.ffhack {
+  overflow: hidden;
+}
+
 html {
   background: #FFFFFF;
   height: 100%;
-}
-
-html.intro {
-  overflow: hidden;
 }
 
 body {
@@ -39,13 +39,17 @@ body {
 }
 
 .intro .wrapper > * {
+  -webkit-transition: opacity 500ms ease 0s;
+  -moz-transition: opacity 500ms ease 0s;
+  transition: opacity 500ms ease 0s;
   opacity: 0;
 }
 
 .wrapper > * {
-  -webkit-transition: 500ms;
-  -moz-transition: 500ms;
-  transition: 500ms;
+  -webkit-transition: opacity 500ms ease 0s;
+  -moz-transition: opacity 500ms ease 0s;
+  transition: opacity 500ms ease 0s;
+  opacity: 1;
 }
 
 .intro .wrapper > header {
@@ -338,6 +342,7 @@ footer p + p {
 
   .wrapper {
     width: 100%;
+    margin: 10px;
   }
 
   footer {
