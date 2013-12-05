@@ -167,38 +167,23 @@ Disable a previously-mapped sequence.
 **NOTE**: Key names are case-sensitive
 
 #### Directionals
-* `left`
-  * `L`
-  * `←`
-* `up`
-  * `U`
-  * `↑`
-* `right`
-  * `R`
-  * `→`
-* `down`
-  * `D`
-  * `↓`
+* `left` | `L` | `←`
+* `up` | `U` | `↑`
+* `right` | `R` | `→`
+* `down` | `D` | `↓`
 
 #### Alphanumeric
 * `0`-`9` (main number keys)
 * `a`-`z`
 
-#### Misc 
+#### Misc
 * `backspace`
 * `tab`
-* `enter`
-  * `return`
-* `shift`
-  * `⇧`
-* `control`
-  * `ctrl`
-  * `⌃`
-* `alt`
-  * `option`
-  * `⌥`
-* `command`
-  * `⌘`
+* `enter` | `return`
+* `shift` | `⇧`
+* `control` | `ctrl` | `⌃`
+* `alt` | `option` | `⌥`
+* `command` | `⌘`
 * `pause`
 * `capslock`
 * `esc`
@@ -209,14 +194,10 @@ Disable a previously-mapped sequence.
 * `home`
 * `insert`
 * `delete`
-* `equal`
-  * `=`
-* `comma`
-  * `,`
-* `minus`
-  * `-`
-* `period`
-  * `.`
+* `equal` | `=`
+* `comma` | `,`
+* `minus` | `-`
+* `period` | `.`
 
 #### Keypad
 * `kp_0`-`kp_9`
@@ -228,7 +209,6 @@ Disable a previously-mapped sequence.
 
 #### Function keys
 * `f1`-`f12`
-
 ### License
 
 MIT
