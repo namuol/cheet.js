@@ -1,0 +1,22 @@
+{
+  "name": "cheet.js",
+  "version": "0.2.3",
+  "description": "easy easter eggs (konami code, etc) for your site",
+  "keywords": [
+    "cheet",
+    "cheat",
+    "easter",
+    "eggs",
+    "keyboard",
+    "silly"
+  ],
+  "license": "MIT",
+  "ignore": [
+    ".editorconfig",
+    "tests/",
+    "node_modules/",
+    "Makefile",
+    "package.json"
+  ],
+  "main": "cheet.js"
+}

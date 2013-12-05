@@ -1,0 +1,13 @@
+{
+  "name": "cheet.js-site",
+  "private": true,
+  "homepage": "http://namuol.github.io/cheet.js",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-jade": "~0.8.0",
+    "grunt-open": "~0.2.2",
+    "grunt-contrib-connect": "~0.5.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-markdown": "git+https://github.com/superbull/grunt-markdown.git#bug-highlight"
+  }
+}

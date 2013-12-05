@@ -1,3 +1,29 @@
+/*
+The MIT License (MIT)
+
+Copyright (c) 2013 Louis Acresti
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+*/
+
+'use strict';
+
 (function () {
   var cheet,
       sequences = {},
@@ -7,8 +33,13 @@
         enter: 13,
         'return': 13,
         shift: 16,
+        '⇧': 16,
+        control: 17,
         ctrl: 17,
+        '⌃': 17,
         alt: 18,
+        option: 18,
+        '⌥': 18,
         pause: 19,
         capslock: 20,
         esc: 27,
@@ -19,12 +50,16 @@
         home: 36,
         left: 37,
         L: 37,
+        '←': 37,
         up: 38,
         U: 38,
+        '↑': 38,
         right: 39,
         R: 39,
+        '→': 39,
         down: 40,
         D: 40,
+        '↓': 40,
         insert: 45,
         'delete': 46,
         '0': 48,
@@ -63,6 +98,8 @@
         x: 88,
         y: 89,
         z: 90,
+        '⌘': 91,
+        command: 91,
         kp_0: 96,
         kp_1: 97,
         kp_2: 98,

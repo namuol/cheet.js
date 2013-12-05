@@ -1,0 +1,129 @@
+!!!
+html.intro
+  head
+    title cheet.js - easy easter eggs (konami code, etc) for your site
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='chrome=1')
+    link(rel='stylesheet', href='stylesheets/styles.css')
+    link(rel='stylesheet', href='stylesheets/monokai_sublime.css')
+    meta(name='viewport', content='width=device-width, initial-scale=1, user-scalable=no')
+
+    //if lt IE 9
+      script(src='//html5shiv.googlecode.com/svn/trunk/html5.js')
+
+  body
+    .hint try typing "cheet.js"
+    .wrapper
+      header
+        h1 cheet.js
+        p easy easter eggs (konami code, etc) for your site.
+        p.view
+          a(href='https://github.com/namuol/cheet.js')
+            | View the Project on GitHub
+            small namuol/cheet.js
+        ul
+          li
+            a(href='https://github.com/namuol/cheet.js/zipball/master')
+              | Download
+              strong ZIP File
+          li
+            a(href='https://github.com/namuol/cheet.js/tarball/master')
+              | Download
+              strong TAR Ball
+          li
+            a(href='https://github.com/namuol/cheet.js')
+              | View On
+              strong GitHub
+
+      | <%= content %>
+
+      footer
+        p
+          | Project maintained by 
+          a(href='http://namuol.github.io') Louis Acresti
+        p
+          | Theme based on "modernist" by 
+          a(href='https://github.com/orderedlist') orderedlist
+
+      //if !IE
+        script(src='javascripts/scale.fix.js')
+        script.
+          fixScale(document);
+
+      script(src='./bower_components/cheet.js/cheet.js', type='text/javascript')
+      script(src='./bower_components/jquery/jquery.min.js', type='text/javascript')
+
+      script(type='text/javascript').
+        function setupCheets() {
+          cheet('↑ ↑ ↓ ↓ ← → ← → b a', function () { alert('Voilà!'); });
+
+          cheet('i d d q d', function () {
+            alert('god mode enabled');
+          });
+
+          cheet('o n e a t a t i m e', {
+            next: function (str, key, num, seq) {
+              console.log('key pressed: ' + key);
+              console.log('progress: ' + num / seq.length);
+              console.log('seq: ' + seq.join(' '));
+            },
+            fail: function () {
+              console.log('sequence failed');
+            },
+            done: function () {
+              console.log('+30 lives ;)');
+            }
+          });
+
+          cheet('o n c e', function () {
+            console.log('This will only fire once.');
+            cheet.disable('o n c e');
+          });
+
+          var sequences = {
+            cross: 'up down left right',
+            circle: 'left up right down'
+          };
+
+          cheet(sequences.cross);
+          cheet(sequences.circle);
+          cheet.done(function (seq) {
+            if (seq === sequences.cross) {
+              console.log('cross!');
+            } else if (seq === sequences.circle) {
+              console.log('circle!');
+            }
+          });
+
+        }
+
+        if (localStorage.getItem('cheeted')) {
+          $('html').removeClass('intro');
+          setupCheets();
+        } else {
+          $('header > h1').text('');
+          cheet('c h e e t . j s', {
+            next: function (str, key, num, seq) {
+              $('header > h1').text($('header > h1').text() + key);
+            },
+            fail: function () {
+              $('header > h1').text('');
+            },
+            done: function () {
+              $('html').removeClass('intro');
+              cheet.disable('c h e e t . j s');
+              localStorage.setItem('cheeted', 'true');
+              setupCheets();
+            }
+          });
+        }
+
+      script(type='text/javascript').
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+      script(type='text/javascript').
+        try {
+          var pageTracker = _gat._getTracker("UA-33247419-1");
+          pageTracker._trackPageview();
+        } catch(err) {}
+

@@ -1,0 +1,13 @@
+{
+  "folders": [
+    {
+      "path": ".",
+      "file_exclude_patterns": [
+        "**/*.wat"
+      ],
+      "folder_exclude_patterns": [
+        "**/node_modules"
+      ]
+    }
+  ]
+}

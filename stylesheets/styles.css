@@ -1,6 +1,12 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+
 html {
   background: #FFFFFF;
+  height: 100%;
+}
+
+html.intro {
+  overflow: hidden;
 }
 
 body {
@@ -10,11 +16,55 @@ body {
   font: 14px/1.5 "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: white;
   background: #3A3C42;
+  min-height: 100%;
+}
+
+.hint {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 100px;
+  width: 100%;
+  text-align: center;
+  color: rgba(255,255,255,0.4);
+  font-size: 14pt;
+}
+
+.intro .hint {
+  display: block;
+}
+
+.intro .wrapper > * {
+  opacity: 0;
+}
+
+.wrapper > * {
+  -webkit-transition: 500ms;
+}
+
+.intro .wrapper > header {
+  opacity: 1;
+}
+
+.intro .wrapper > header > * {
+  opacity: 0;
+}
+
+.intro .wrapper > header > h1 {
+  opacity: 1;
 }
 
 .wrapper {
   width: 700px;
   margin: 0 auto;
+}
+
+.wrapper > h1, .wrapper > h2 {
+  display: none;
 }
 
 header, section, footer {
@@ -24,7 +74,7 @@ header, section, footer {
 a {
   color: white;
   border-bottom: 1px solid rgba(255,255,255,0.25);
-  text-decoration: none;  
+  text-decoration: none;
 }
 
 a:hover {
@@ -217,12 +267,13 @@ pre {
 }
 
 pre {
-  padding: 20px;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.5) !important;
   color: #f8f8f2;
   /* margin: 0 -20px 20px; */
 }
 pre code {
+  background: transparent !important;
+  padding: 20px !important;
   color: #f8f8f2;
 }
 li pre {
