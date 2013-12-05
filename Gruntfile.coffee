@@ -60,4 +60,4 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-open'
 
   grunt.registerTask 'default', ['jade', 'markdown']
-  grunt.registerTask 'hack', ['connect:server', 'open:hack', 'watch']
+  grunt.registerTask 'hack', ['default', 'connect:server', 'open:hack', 'watch']

@@ -3,7 +3,9 @@
 ## easy easter eggs in the browser
 
 ```javascript
-cheet('↑ ↑ ↓ ↓ ← → ← → b a', function () { alert('Voilà!'); });
+cheet('↑ ↑ ↓ ↓ ← → ← → b a', function () {
+  alert('Voilà!');
+});
 ```
 
 ```javascript
@@ -169,18 +171,10 @@ Disable a previously-mapped sequence.
 **NOTE**: Key names are case-sensitive
 
 #### Directionals
-* `left`
-  * `L`
-  * `←`
-* `up`
-  * `U`
-  * `↑`
-* `right`
-  * `R`
-  * `→`
-* `down`
-  * `D`
-  * `↓`
+* `left` | `L` | `←`
+* `up` | `U` | `↑`
+* `right` | `R` | `→`
+* `down` | `D` | `↓`
 
 #### Alphanumeric
 * `0`-`9` (main number keys)
@@ -189,18 +183,11 @@ Disable a previously-mapped sequence.
 #### Misc 
 * `backspace`
 * `tab`
-* `enter`
-  * `return`
-* `shift`
-  * `⇧`
-* `control`
-  * `ctrl`
-  * `⌃`
-* `alt`
-  * `option`
-  * `⌥`
-* `command`
-  * `⌘`
+* `enter` | `return`
+* `shift` | `⇧`
+* `control` | `ctrl` | `⌃`
+* `alt` | `option` | `⌥`
+* `command` | `⌘`
 * `pause`
 * `capslock`
 * `esc`
@@ -211,14 +198,10 @@ Disable a previously-mapped sequence.
 * `home`
 * `insert`
 * `delete`
-* `equal`
-  * `=`
-* `comma`
-  * `,`
-* `minus`
-  * `-`
-* `period`
-  * `.`
+* `equal` | `=`
+* `comma` | `,`
+* `minus` | `-`
+* `period` | `.`
 
 #### Keypad
 * `kp_0`-`kp_9`
