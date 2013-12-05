@@ -4,6 +4,8 @@
   "homepage": "http://namuol.github.io/cheet.js",
   "dependencies": {
     "cheet.js": "0.2.3",
-    "jquery": "~2.0.3"
+    "jquery": "~2.0.3",
+    "chai": "~1.8.1",
+    "mocha": "~1.15.1"
   }
 }
