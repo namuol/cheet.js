@@ -217,14 +217,17 @@ cheet.done(<span class="function"><span class="keyword">function</span> <span cl
 <hr>
 <p><code>cheet.js</code> was just a fun little one-night project I made to put easter eggs on my personal site.</p>
 <p>If you&#39;re looking for something more useful/serious, check out <a href="https://github.com/ccampbell/mousetrap">Mousetrap</a>.</p>
-<footer><p>Project maintained by <a href="http://namuol.github.io">Louis Acresti</a></p><p>Theme based on "modernist" by <a href="https://github.com/orderedlist">orderedlist</a></p></footer><!--[if !IE]><script src="javascripts/scale.fix.js"></script><script>fixScale(document);
+<footer>
+  <p>Project maintained by <a href="http://namuol.github.io">Louis Acresti</a> <a class='thanks' href="https://spacebox.io/s/Bti5V1MBkw">[say thanks]</a></p>
+  <p>Theme based on "modernist" by <a href="https://github.com/orderedlist">orderedlist</a></p>
+  </footer><!--[if !IE]><script src="javascripts/scale.fix.js"></script><script>fixScale(document);
 </script><![endif]--><script src="./bower_components/cheet.js/cheet.js" type="text/javascript"></script><script src="./bower_components/jquery/jquery.min.js" type="text/javascript"></script><script type="text/javascript">function setupCheets() {
   cheet('↑ ↑ ↓ ↓ ← → ← → b a', function () { alert('Voilà!'); });
-  
+
   cheet('i d d q d', function () {
     alert('god mode enabled');
   });
-  
+
   cheet('o n e a t a t i m e', {
     next: function (str, key, num, seq) {
       console.log('key pressed: ' + key);
@@ -238,17 +241,17 @@ cheet.done(<span class="function"><span class="keyword">function</span> <span cl
       console.log('+30 lives ;)');
     }
   });
-  
+
   cheet('o n c e', function () {
     console.log('This will only fire once.');
     cheet.disable('o n c e');
   });
-  
+
   var sequences = {
     cross: 'up down left right',
     circle: 'left up right down'
   };
-  
+
   cheet(sequences.cross);
   cheet(sequences.circle);
   cheet.done(function (seq) {
@@ -258,7 +261,7 @@ cheet.done(<span class="function"><span class="keyword">function</span> <span cl
       console.log('circle!');
     }
   });
-  
+
 }
 
 if (localStorage.getItem('cheeted')) {

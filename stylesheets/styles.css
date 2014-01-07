@@ -335,6 +335,12 @@ footer p + p {
   float: right;
 }
 
+footer .thanks {
+  font-size: 80%;
+  font-weight: bold;
+  border: 0;
+}
+
 @media print, screen and (max-width: 740px) {
   body {
     padding: 0;
