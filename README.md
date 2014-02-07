@@ -162,6 +162,18 @@ Disable a previously-mapped sequence.
 > [`sequence`](#api_disable_sequence) (String)
 > > The same string you used to map the callback when using [`cheet(seq, ...)`](#api_cheet).
 
+<a name='api_reset'></a>
+#### [`cheet.reset(sequence)`](#api_reset)
+
+Resets a sequence that may or may not be in progress.
+
+This will *not* cause `fail` callbacks to fire, but will effectively
+cancel the sequence.
+
+> <a name='api_reset_sequence'></a>
+> [`sequence`](#api_reset_sequence) (String)
+> > The same string you used to map the callback when using [`cheet(seq, ...)`](#api_cheet).
+
 ### Available Key Names
 
 **NOTE**: Key names are case-sensitive
