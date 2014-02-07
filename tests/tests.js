@@ -68,6 +68,23 @@ describe('cheet.js', function () {
     });
   });
 
+  describe('#reset', function () {
+    it('resets the given sequence', function () {
+      var count = 0;
+      cheet('r e s e t', function () {
+        count++;
+      });
+      press('r e s e t');
+      assert.equal(1, count);
+      press('r e s');
+      cheet.reset('r e s e t');
+      press('e t');
+      assert.equal(1, count);
+      press('r e s e t');
+      assert.equal(2, count);
+    });
+  });
+
   describe('key aliases', function () {
     var keys = {
       backspace: 8,
