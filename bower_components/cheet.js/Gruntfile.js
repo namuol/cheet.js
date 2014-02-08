@@ -6,6 +6,10 @@ module.exports = function (grunt) {
     HOSTNAME: process.env.HOSTNAME || '127.0.0.1',
     PORT: process.env.PORT || 3000,
 
+    jshint: {
+      all: 'cheet.js'
+    },
+
     uglify: {
       options: {
         mangle: false
@@ -28,18 +32,17 @@ module.exports = function (grunt) {
       options: {
         port: '<%= PORT %>',
         hostname: '<%= HOSTNAME %>',
-        keepalive: true
+        keepalive: true,
+        base: './'
       },
       test: {
+      },
+      open: {
         options: {
-          base: './'
+          open: {
+            target: 'http://<%= HOSTNAME %>:<%= PORT %>/tests'
+          }
         }
-      }
-    },
-
-    open: {
-      test: {
-        path: 'http://<%= HOSTNAME %>:<%= PORT %>/tests'
       }
     }
   });
@@ -47,9 +50,9 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-mocha-phantomjs');
-  grunt.loadNpmTasks('grunt-open');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
 
-  grunt.registerTask('default', ['uglify']);
-  grunt.registerTask('test', ['mocha_phantomjs']);
-  grunt.registerTask('test.open', ['open:test', 'connect:test']);
+  grunt.registerTask('default', ['jshint', 'uglify']);
+  grunt.registerTask('test', ['jshint', 'mocha_phantomjs']);
+  grunt.registerTask('test.open', ['connect:open']);
 };

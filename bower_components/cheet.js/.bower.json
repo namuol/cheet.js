@@ -1,6 +1,6 @@
 {
   "name": "cheet.js",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "easy easter eggs (konami code, etc) for your site",
   "keywords": [
     "cheet",
@@ -20,13 +20,14 @@
   ],
   "main": "cheet.js",
   "homepage": "https://github.com/namuol/cheet.js",
-  "_release": "0.2.3",
+  "_release": "0.3.0",
   "_resolution": {
     "type": "version",
-    "tag": "0.2.3",
-    "commit": "24f8264a7027666f63d30c241f4527f27825c7bd"
+    "tag": "0.3.0",
+    "commit": "3470007a2f59ef290fd4565439e25322678dfb5c"
   },
   "_source": "git://github.com/namuol/cheet.js.git",
-  "_target": "0.2.3",
-  "_originalSource": "cheet.js"
+  "_target": "~0.3.0",
+  "_originalSource": "cheet.js",
+  "_direct": true
 }

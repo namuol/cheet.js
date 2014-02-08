@@ -22,9 +22,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
 
-'use strict';
 
-(function () {
+(function (global) {
+  'use strict';
+
   var cheet,
       sequences = {},
       keys = {
@@ -140,7 +141,7 @@ THE SOFTWARE.
       NOOP = function NOOP() {},
       held = {};
 
-  Sequence = function Sequence(str, next, fail, done) {
+  Sequence = function Sequence (str, next, fail, done) {
     var i;
 
     this.str = str;
@@ -162,7 +163,7 @@ THE SOFTWARE.
     var i = this.idx;
     if (keyCode !== this.keys[i]) {
       if (i > 0) {
-        this.idx = 0;
+        this.reset();
         this.fail(this.str);
         cheet.__fail(this.str);
       }
@@ -175,8 +176,12 @@ THE SOFTWARE.
     if (++this.idx === this.keys.length) {
       this.done(this.str);
       cheet.__done(this.str);
-      this.idx = 0;
+      this.reset();
     }
+  };
+
+  Sequence.prototype.reset = function () {
+    this.idx = 0;
   };
 
   cheet = function cheet (str, handlers) {
@@ -184,7 +189,7 @@ THE SOFTWARE.
 
     if (typeof handlers === 'function') {
       done = handlers;
-    } else if (handlers != null) {
+    } else if (handlers !== null && handlers !== undefined) {
       next = handlers.next;
       fail = handlers.fail;
       done = handlers.done;
@@ -214,7 +219,7 @@ THE SOFTWARE.
     held[k] = false;
   }
 
-  function reset (e) {
+  function resetHeldKeys (e) {
     var k;
     for (k in held) {
       held[k] = false;
@@ -235,8 +240,8 @@ THE SOFTWARE.
 
   on(window, 'keydown', keydown);
   on(window, 'keyup', keyup);
-  on(window, 'blur', reset);
-  on(window, 'focus', reset);
+  on(window, 'blur', resetHeldKeys);
+  on(window, 'focus', resetHeldKeys);
 
   cheet.__next = NOOP;
   cheet.next = function next (fn) {
@@ -253,9 +258,19 @@ THE SOFTWARE.
     cheet.__done = fn === null ? NOOP : fn;
   };
 
-  window.cheet = cheet;
+  cheet.reset = function reset (id) {
+    var seq = sequences[id];
+    if (!(seq instanceof Sequence)) {
+      console.warn('cheet: Unknown sequence: ' + id);
+      return;
+    }
 
-  if (typeof module !== 'undefined') {
+    seq.reset();
+  };
+
+  global.cheet = cheet;
+
+  if (typeof module !== 'undefined' && module !== null) {
     module.exports = cheet;
   }
-})();
+})(this);
