@@ -251,3 +251,7 @@ Special thanks to [Guilherme J. Tramontina](http://github.com/gtramontina) for w
 `cheet.js` was just a fun little one-night project I made to put easter eggs on my personal site.
 
 If you're looking for something more useful/serious, check out [Mousetrap](https://github.com/ccampbell/mousetrap).
+
+---
+
+[![Analytics](https://ga-beacon.appspot.com/UA-33247419-2/cheet.js/README.md)](https://github.com/igrigorik/ga-beacon)
