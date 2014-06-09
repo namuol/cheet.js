@@ -1,4 +1,4 @@
-# cheet.js [![Build Status](https://travis-ci.org/namuol/cheet.js.png?branch=master)](https://travis-ci.org/namuol/cheet.js) [![devDependency Status](https://david-dm.org/namuol/cheet.js/dev-status.svg)](https://david-dm.org/namuol/cheet.js#info=devDependencies)
+# cheet.js [![Build Status](https://drone.io/github.com/namuol/cheet.js/status.png)](https://drone.io/github.com/namuol/cheet.js/latest) [![devDependency Status](https://david-dm.org/namuol/cheet.js/dev-status.svg)](https://david-dm.org/namuol/cheet.js#info=devDependencies)
 
 ## easy easter eggs in the browser
 
