@@ -153,17 +153,6 @@ cheet.done(<span class="function"><span class="keyword">function</span> <span cl
 <p>The same string you used to map the callback when using <a href="#api_cheet"><code>cheet(seq, ...)</code></a>.</p>
 </blockquote>
 </blockquote>
-<p><a name='api_reset'></a></p>
-<h4 id="-cheet-reset-sequence-api_reset-"><a href="#api_reset"><code>cheet.reset(sequence)</code></a></h4>
-<p>Resets a sequence that may or may not be in progress.</p>
-<p>This will <em>not</em> cause <code>fail</code> callbacks to fire, but will effectively cancel the sequence.</p>
-<blockquote>
-<p><a name='api_reset_sequence'></a>
-<a href="#api_reset_sequence"><code>sequence</code></a> (String)</p>
-<blockquote>
-<p>The same string you used to map the callback when using <a href="#api_cheet"><code>cheet(seq, ...)</code></a>.</p>
-</blockquote>
-</blockquote>
 <h3 id="available-key-names">Available Key Names</h3>
 <p><strong>NOTE</strong>: Key names are case-sensitive</p>
 <h4 id="directionals">Directionals</h4>
@@ -217,7 +206,7 @@ cheet.done(<span class="function"><span class="keyword">function</span> <span cl
 </ul>
 <h3 id="license">License</h3>
 <p>MIT</p>
-<h3 id="testing">Testing</h3>
+<h3 id="testing">Testing <a class='badge' href="https://drone.io/github.com/namuol/cheet.js/latest"><img src="https://drone.io/github.com/namuol/cheet.js/status.png" alt="Build Status" style="max-width:100%;"></a></h3>
 <p>From the cheet.js&#39; root directory:</p>
 <pre><code class="lang-shell"><span class="title">grunt</span> test</code></pre>
 <p>You can also run the tests directly in your browser:</p>
@@ -228,10 +217,7 @@ cheet.done(<span class="function"><span class="keyword">function</span> <span cl
 <hr>
 <p><code>cheet.js</code> was just a fun little one-night project I made to put easter eggs on my personal site.</p>
 <p>If you&#39;re looking for something more useful/serious, check out <a href="https://github.com/ccampbell/mousetrap">Mousetrap</a>.</p>
-<footer>
-  <p>Project maintained by <a href="http://namuol.github.io">Louis Acresti</a> <a class='thanks' href="https://spacebox.io/s/Bti5V1MBkw">[say thanks]</a></p>
-  <p>Theme based on "modernist" by <a href="https://github.com/orderedlist">orderedlist</a></p>
-  </footer><!--[if !IE]><script src="javascripts/scale.fix.js"></script><script>fixScale(document);
+<footer><p>Project maintained by <a href="http://namuol.github.io">Louis Acresti</a></p><p>Theme based on "modernist" by <a href="https://github.com/orderedlist">orderedlist</a></p></footer><!--[if !IE]><script src="javascripts/scale.fix.js"></script><script>fixScale(document);
 </script><![endif]--><script src="./bower_components/cheet.js/cheet.js" type="text/javascript"></script><script src="./bower_components/jquery/jquery.min.js" type="text/javascript"></script><script type="text/javascript">function setupCheets() {
   cheet('↑ ↑ ↓ ↓ ← → ← → b a', function () { alert('Voilà!'); });
 

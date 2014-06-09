@@ -392,9 +392,13 @@ footer .thanks {
 }
 
 a code {
-    color: #a6e22e;
+  color: #a6e22e;
 }
 
 a:hover code {
-    color: #e6db74;
+  color: #e6db74;
+}
+
+a.badge {
+  border-bottom: none;
 }
