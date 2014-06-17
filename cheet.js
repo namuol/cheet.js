@@ -270,7 +270,10 @@ THE SOFTWARE.
 
   global.cheet = cheet;
 
-  if (typeof module !== 'undefined' && module !== null) {
+  if (typeof define === 'function' && define.amd) {
+    define([], function () { return cheet; });
+  } else if (typeof module !== 'undefined' && module !== null) {
     module.exports = cheet;
   }
+
 })(this);
