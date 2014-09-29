@@ -45,6 +45,10 @@ body {
   opacity: 0;
 }
 
+.intro .dotjs {
+  display: none;
+}
+
 .wrapper > * {
   -webkit-transition: opacity 500ms ease 0s;
   -moz-transition: opacity 500ms ease 0s;

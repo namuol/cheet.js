@@ -1,4 +1,4 @@
-<!DOCTYPE html><html class="intro ffhack"><head><title>cheet.js - easy easter eggs (konami code, etc) for your site</title><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="chrome=1"><link rel="stylesheet" href="stylesheets/styles.css"><link rel="stylesheet" href="stylesheets/monokai_sublime.css"><meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]--></head><body><div class="hint">try typing "cheet.js"</div><div class="wrapper"><header><h1>cheet.js</h1><p>easy easter eggs (konami code, etc) for your site.</p><p class="view"><a href="https://github.com/namuol/cheet.js">View the Project on GitHub<small>namuol/cheet.js</small></a></p><ul><li><a href="https://github.com/namuol/cheet.js/zipball/master">Download<strong>ZIP File</strong></a></li><li><a href="https://github.com/namuol/cheet.js/tarball/master">Download<strong>TAR Ball</strong></a></li><li><a href="https://github.com/namuol/cheet.js">View On<strong>GitHub</strong></a></li></ul></header><h1 id="cheet-js-build-status-https-travis-ci-org-namuol-cheet-js-png-branch-master-https-travis-ci-org-namuol-cheet-js-">cheet.js <a href="https://travis-ci.org/namuol/cheet.js"><img src="https://travis-ci.org/namuol/cheet.js.png?branch=master" alt="Build Status"></a></h1>
+<!DOCTYPE html><html class="intro ffhack"><head><title>cheet.js - easy easter eggs (konami code, etc) for your site</title><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="chrome=1"><link rel="stylesheet" href="stylesheets/styles.css"><link rel="stylesheet" href="stylesheets/monokai_sublime.css"><meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]--></head><body><div class="hint">try typing "cheet"</div><div class="wrapper"><header><h1><span class='cheet'>cheet</span><span class='dotjs'>.js</span></h1><p>easy easter eggs (konami code, etc) for your site.</p><p class="view"><a href="https://github.com/namuol/cheet.js">View the Project on GitHub<small>namuol/cheet.js</small></a></p><ul><li><a href="https://github.com/namuol/cheet.js/zipball/master">Download<strong>ZIP File</strong></a></li><li><a href="https://github.com/namuol/cheet.js/tarball/master">Download<strong>TAR Ball</strong></a></li><li><a href="https://github.com/namuol/cheet.js">View On<strong>GitHub</strong></a></li></ul></header><h1 id="cheet-js-build-status-https-travis-ci-org-namuol-cheet-js-png-branch-master-https-travis-ci-org-namuol-cheet-js-">cheet.js <a href="https://travis-ci.org/namuol/cheet.js"><img src="https://travis-ci.org/namuol/cheet.js.png?branch=master" alt="Build Status"></a></h1>
 <h2 id="easy-easter-eggs-in-the-browser">easy easter eggs in the browser</h2>
 <pre><code class="lang-javascript">cheet(<span class="string">'↑ ↑ ↓ ↓ ← → ← → b a'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span>
   alert(<span class="string">'Voilà!'</span>);
@@ -266,18 +266,18 @@ if (localStorage.getItem('cheeted')) {
   setTimeout(function () { $('html').removeClass('ffhack'); }, 10);
   setupCheets();
 } else {
-  $('header > h1').text('');
-  cheet('c h e e t . j s', {
+  $('header > h1 > .cheet').text('');
+  cheet('c h e e t', {
     next: function (str, key, num, seq) {
-      $('header > h1').text($('header > h1').text() + key);
+      $('header > h1 > .cheet').text($('header > h1 > .cheet').text() + key);
     },
     fail: function () {
-      $('header > h1').text('');
+      $('header > h1 > .cheet').text('');
     },
     done: function () {
       $('html').removeClass('intro');
       setTimeout(function () { $('html').removeClass('ffhack'); }, 10);
-      cheet.disable('c h e e t . j s');
+      cheet.disable('c h e e t');
       localStorage.setItem('cheeted', 'true');
       setupCheets();
     }
