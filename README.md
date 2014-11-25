@@ -1,4 +1,4 @@
-# cheet.js [![Build Status](https://drone.io/github.com/namuol/cheet.js/status.png)](https://drone.io/github.com/namuol/cheet.js/latest) [![devDependency Status](https://david-dm.org/namuol/cheet.js/dev-status.svg)](https://david-dm.org/namuol/cheet.js#info=devDependencies)
+# cheet.js [![Build Status](https://drone.io/github.com/namuol/cheet.js/status.png)](https://drone.io/github.com/namuol/cheet.js/latest) [![dependency Status](https://david-dm.org/namuol/cheet.js/status.svg?style=flat-square)](https://david-dm.org/namuol/cheet.js#info=devDependencies) [![devDependency Status](https://david-dm.org/namuol/cheet.js/dev-status.svg?style=flat-square)](https://david-dm.org/namuol/cheet.js#info=devDependencies) [![Gratipay Tips per Week](http://img.shields.io/gratipay/namuol.svg?style=flat-square)]
 
 ## easy easter eggs in the browser
 
