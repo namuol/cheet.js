@@ -61,6 +61,12 @@ cheet.done(function (seq) {
 
 ### Install
 
+#### Easy CDN
+
+    <script src="//cdn.rawgit.com/namuol/cheet.js/master/cheet.min.js" type="text/javascript"></script>
+
+  (Awesome free OSS hosting provided by [@rgrove](http://github.com/rgrove) via [rawgit](http://rawgit.com))
+
 #### bower
 
     bower install cheet.js
