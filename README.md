@@ -250,7 +250,7 @@ Or just [view them online](http://namuol.github.io/cheet.js/tests).
 
 ### Acknowledgements
 
-Special thanks to [Guilherme J. Tramontina](http://github.com/gtramontina) for writing the delicious [mocha](http://visionmedia.github.io/mocha/)/[chai](http://chaijs.com/) test suite.
+Special thanks to [Guilherme J. Tramontina](http://github.com/gtramontina) for writing the delicious [mocha](http://mochajs.org/)/[chai](http://chaijs.com/) test suite.
 
 ---
 
