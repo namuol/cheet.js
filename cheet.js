@@ -238,10 +238,10 @@ THE SOFTWARE.
     }
   }
 
-  on(window, 'keydown', keydown);
-  on(window, 'keyup', keyup);
-  on(window, 'blur', resetHeldKeys);
-  on(window, 'focus', resetHeldKeys);
+  on(window.parent, 'keydown', keydown);
+  on(window.parent, 'keyup', keyup);
+  on(window.parent, 'blur', resetHeldKeys);
+  on(window.parent, 'focus', resetHeldKeys);
 
   cheet.__next = NOOP;
   cheet.next = function next (fn) {
