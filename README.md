@@ -6,7 +6,7 @@
 cheet('↑ ↑ ↓ ↓ ← → ← → b a', function () { alert('Voilà!'); });
 ```
 
-```javascript
+```javascript 
 cheet('i d d q d', function () {
   alert('god mode enabled');
 });
